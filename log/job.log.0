@@ -1,0 +1,1176 @@
+-----------  Configuration Arguments -----------
+attention_probs_dropout_prob: -1.0
+batch_size: 4
+beam_size: 5
+checkpoints: ./checkpoints
+continuous_position: True
+decr_every_n_nan_or_inf: 2
+decr_ratio: 0.8
+dev_set: ./datasets/squad_qg//dev.tsv
+do_decode: True
+do_lower_case: True
+do_pred: False
+do_test: True
+do_train: True
+do_val: True
+epoch: 10
+ernie_config_path: ernie_gen_base/ernie_config.json
+eval_mertrics: Bleu_4,METEOR,ROUGE_L
+eval_script: sh ./eval/tasks/squad_qg/eval.sh
+hidden_dropout_prob: 0.1
+in_tokens: False
+incr_every_n_steps: 100
+incr_ratio: 2.0
+init_checkpoint: None
+init_loss_scaling: 128.0
+init_pretraining_params: ernie_gen_base/params
+is_distributed: True
+label_smooth: 0.1
+learning_rate: 2.5e-05
+length_penalty: 1.0
+lr_scheduler: linear_warmup_decay
+max_dec_len: 48
+max_seq_len: 512
+max_src_len: 512
+max_tgt_len: 96
+noise_prob: 0.7
+num_iteration_per_drop_scope: 1
+pred_batch_size: 0
+pred_set: ./datasets/squad_qg//
+random_noise: True
+random_seed: 17854
+role_type_size: 0
+save_and_valid_by_epoch: True
+save_steps: 10000
+skip_steps: 10
+src_do_lower_case: True
+src_tokenizer: FullTokenizer
+src_vocab_path: None
+stream_job: None
+task_type: normal
+test_set: ./datasets/squad_qg//test.tsv
+tgt_type_id: 3
+tokenized_input: True
+tokenizer: FullTokenizer
+train_set: ./datasets/squad_qg//train.tsv
+turn_type_size: 0
+use_cuda: True
+use_dynamic_loss_scaling: False
+use_fast_executor: True
+use_fp16: False
+use_multi_gpu_test: True
+validation_steps: 1000
+verbose: True
+vocab_path: ernie_gen_base/vocab.txt
+warmup_proportion: 0.1
+weight_decay: 0.01
+weight_sharing: True
+------------------------------------------------
+attention_probs_dropout_prob: 0.1
+hidden_act: gelu
+hidden_dropout_prob: 0.1
+hidden_size: 768
+initializer_range: 0.02
+intermediate_size: 3072
+max_position_embeddings: 1024
+num_attention_heads: 12
+num_hidden_layers: 12
+type_vocab_size: 4
+vocab_size: 30522
+------------------------------------------------
+Device count: 1, gpu_id: 0
+Num train examples: 75722
+Max train steps: 189305
+Num warmup steps: 18930
+Theoretical memory usage in training: 32958.811 - 34528.279 MB
+args.is_distributed: True
+worker_endpoints:['172.17.0.2:6170'] trainers_num:1 current_endpoint:172.17.0.2:6170               trainer_id:0
+W0421 07:14:12.613667 20128 device_context.cc:236] Please NOTE: device: 0, CUDA Capability: 75, Driver API Version: 11.2, Runtime API Version: 10.0
+W0421 07:14:12.648360 20128 device_context.cc:244] device: 0, cuDNN Version: 7.6.
+69909c51c9cc:20128:20128 [0] NCCL INFO NET/Socket : Using [0]eth0:172.17.0.2<0>
+69909c51c9cc:20128:20128 [0] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so).
+
+69909c51c9cc:20128:20128 [0] misc/ibvwrap.cc:63 NCCL WARN Failed to open libibverbs.so[.1]
+I0421 07:14:14.169850 20128 rpc_client.h:107] init rpc client with trainer_id 0
+Load pretraining parameters from ernie_gen_base/params.
+I0421 07:14:15.301852 20128 parallel_executor.cc:421] The number of CUDAPlace, which is used in ParallelExecutor, is 1. And the Program will be copied 1 copies
+I0421 07:14:15.398818 20128 build_strategy.cc:363] SeqOnlyAllReduceOps:0, num_trainers:1
+I0421 07:14:15.684080 20128 parallel_executor.cc:285] Inplace strategy is enabled, when build_strategy.enable_inplace = True
+I0421 07:14:15.774756 20128 parallel_executor.cc:368] Garbage collection strategy is enabled, when FLAGS_eager_delete_tensor_gb = 1
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 40/75722, step: 10, loss: 7.147723, ppl: 1271.208374, speed: 2.809097 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 80/75722, step: 20, loss: 6.732186, ppl: 838.979553, speed: 3.381171 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 120/75722, step: 30, loss: 7.522898, ppl: 1849.920044, speed: 2.965121 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 160/75722, step: 40, loss: 8.041009, ppl: 3105.745117, speed: 3.558107 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 200/75722, step: 50, loss: 7.167902, ppl: 1297.120972, speed: 3.308801 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 240/75722, step: 60, loss: 7.672523, ppl: 2148.496338, speed: 3.779041 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 280/75722, step: 70, loss: 7.535216, ppl: 1872.848633, speed: 3.376909 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 320/75722, step: 80, loss: 7.020209, ppl: 1119.020264, speed: 3.254704 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 360/75722, step: 90, loss: 7.057972, ppl: 1162.086060, speed: 2.903266 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 400/75722, step: 100, loss: 7.338246, ppl: 1538.011841, speed: 3.295685 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 440/75722, step: 110, loss: 7.408343, ppl: 1649.691040, speed: 3.258973 steps/s
+W0421 07:15:00.551287 20128 operator.cc:179] dropout_grad raises an exception paddle::memory::allocation::BadAlloc, 
+
+--------------------------------------------
+C++ Call Stacks (More useful to developers):
+--------------------------------------------
+0   paddle::memory::detail::GPUAllocator::Alloc(unsigned long*, unsigned long)
+1   paddle::memory::detail::BuddyAllocator::RefillPool(unsigned long)
+2   paddle::memory::detail::BuddyAllocator::Alloc(unsigned long)
+3   void* paddle::memory::legacy::Alloc<paddle::platform::CUDAPlace>(paddle::platform::CUDAPlace const&, unsigned long)
+4   paddle::memory::allocation::NaiveBestFitAllocator::AllocateImpl(unsigned long)
+5   paddle::memory::allocation::Allocator::Allocate(unsigned long)
+6   paddle::memory::allocation::RetryAllocator::AllocateImpl(unsigned long)
+7   paddle::memory::allocation::AllocatorFacade::Alloc(paddle::platform::Place const&, unsigned long)
+8   paddle::memory::allocation::AllocatorFacade::AllocShared(paddle::platform::Place const&, unsigned long)
+9   paddle::memory::AllocShared(paddle::platform::Place const&, unsigned long)
+10  paddle::framework::Tensor::mutable_data(paddle::platform::Place, paddle::framework::proto::VarType_Type, unsigned long)
+11  paddle::operators::DropoutGradKernel<paddle::platform::CUDADeviceContext, float>::Compute(paddle::framework::ExecutionContext const&) const
+12  std::_Function_handler<void (paddle::framework::ExecutionContext const&), paddle::framework::OpKernelRegistrarFunctor<paddle::platform::CUDAPlace, false, 0ul, paddle::operators::DropoutGradKernel<paddle::platform::CUDADeviceContext, float>, paddle::operators::DropoutGradKernel<paddle::platform::CUDADeviceContext, paddle::platform::float16>, paddle::operators::DropoutGradKernel<paddle::platform::CUDADeviceContext, double> >::operator()(char const*, char const*, int) const::{lambda(paddle::framework::ExecutionContext const&)#1}>::_M_invoke(std::_Any_data const&, paddle::framework::ExecutionContext const&)
+13  paddle::framework::OperatorWithKernel::RunImpl(paddle::framework::Scope const&, paddle::platform::Place const&, paddle::framework::RuntimeContext*) const
+14  paddle::framework::OperatorWithKernel::RunImpl(paddle::framework::Scope const&, paddle::platform::Place const&) const
+15  paddle::framework::OperatorBase::Run(paddle::framework::Scope const&, paddle::platform::Place const&)
+16  paddle::framework::details::ComputationOpHandle::RunImpl()
+17  paddle::framework::details::FastThreadedSSAGraphExecutor::RunOpSync(paddle::framework::details::OpHandleBase*)
+18  paddle::framework::details::FastThreadedSSAGraphExecutor::RunTracedOps(std::vector<paddle::framework::details::OpHandleBase*, std::allocator<paddle::framework::details::OpHandleBase*> > const&)
+19  paddle::framework::details::FastThreadedSSAGraphExecutor::Run(std::vector<std::string, std::allocator<std::string> > const&)
+20  paddle::framework::details::ScopeBufferedSSAGraphExecutor::Run(std::vector<std::string, std::allocator<std::string> > const&)
+21  paddle::framework::ParallelExecutor::Run(std::vector<std::string, std::allocator<std::string> > const&)
+
+----------------------
+Error Message Summary:
+----------------------
+
+
+Out of memory error on GPU 0. Cannot allocate 71.449501MB memory on GPU 0, available memory is only 81.750000MB.
+
+Please check whether there is any other process using GPU 0.
+1. If yes, please stop them, or start PaddlePaddle on another GPU.
+2. If no, please try one of the following suggestions:
+   1) Decrease the batch size of your model.
+   2) FLAGS_fraction_of_gpu_memory_to_use is 0.92 now, please set it to a higher value but less than 1.0.
+      The command is `export FLAGS_fraction_of_gpu_memory_to_use=xxx`.
+
+ at (/paddle/paddle/fluid/memory/detail/system_allocator.cc:151)
+F0421 07:15:00.551889 20128 exception_holder.h:37] std::exception caught, 
+
+--------------------------------------------
+C++ Call Stacks (More useful to developers):
+--------------------------------------------
+0   paddle::memory::detail::GPUAllocator::Alloc(unsigned long*, unsigned long)
+1   paddle::memory::detail::BuddyAllocator::RefillPool(unsigned long)
+2   paddle::memory::detail::BuddyAllocator::Alloc(unsigned long)
+3   void* paddle::memory::legacy::Alloc<paddle::platform::CUDAPlace>(paddle::platform::CUDAPlace const&, unsigned long)
+4   paddle::memory::allocation::NaiveBestFitAllocator::AllocateImpl(unsigned long)
+5   paddle::memory::allocation::Allocator::Allocate(unsigned long)
+6   paddle::memory::allocation::RetryAllocator::AllocateImpl(unsigned long)
+7   paddle::memory::allocation::AllocatorFacade::Alloc(paddle::platform::Place const&, unsigned long)
+8   paddle::memory::allocation::AllocatorFacade::AllocShared(paddle::platform::Place const&, unsigned long)
+9   paddle::memory::AllocShared(paddle::platform::Place const&, unsigned long)
+10  paddle::framework::Tensor::mutable_data(paddle::platform::Place, paddle::framework::proto::VarType_Type, unsigned long)
+11  paddle::operators::DropoutGradKernel<paddle::platform::CUDADeviceContext, float>::Compute(paddle::framework::ExecutionContext const&) const
+12  std::_Function_handler<void (paddle::framework::ExecutionContext const&), paddle::framework::OpKernelRegistrarFunctor<paddle::platform::CUDAPlace, false, 0ul, paddle::operators::DropoutGradKernel<paddle::platform::CUDADeviceContext, float>, paddle::operators::DropoutGradKernel<paddle::platform::CUDADeviceContext, paddle::platform::float16>, paddle::operators::DropoutGradKernel<paddle::platform::CUDADeviceContext, double> >::operator()(char const*, char const*, int) const::{lambda(paddle::framework::ExecutionContext const&)#1}>::_M_invoke(std::_Any_data const&, paddle::framework::ExecutionContext const&)
+13  paddle::framework::OperatorWithKernel::RunImpl(paddle::framework::Scope const&, paddle::platform::Place const&, paddle::framework::RuntimeContext*) const
+14  paddle::framework::OperatorWithKernel::RunImpl(paddle::framework::Scope const&, paddle::platform::Place const&) const
+15  paddle::framework::OperatorBase::Run(paddle::framework::Scope const&, paddle::platform::Place const&)
+16  paddle::framework::details::ComputationOpHandle::RunImpl()
+17  paddle::framework::details::FastThreadedSSAGraphExecutor::RunOpSync(paddle::framework::details::OpHandleBase*)
+18  paddle::framework::details::FastThreadedSSAGraphExecutor::RunTracedOps(std::vector<paddle::framework::details::OpHandleBase*, std::allocator<paddle::framework::details::OpHandleBase*> > const&)
+19  paddle::framework::details::FastThreadedSSAGraphExecutor::Run(std::vector<std::string, std::allocator<std::string> > const&)
+20  paddle::framework::details::ScopeBufferedSSAGraphExecutor::Run(std::vector<std::string, std::allocator<std::string> > const&)
+21  paddle::framework::ParallelExecutor::Run(std::vector<std::string, std::allocator<std::string> > const&)
+
+----------------------
+Error Message Summary:
+----------------------
+
+
+Out of memory error on GPU 0. Cannot allocate 71.449501MB memory on GPU 0, available memory is only 81.750000MB.
+
+Please check whether there is any other process using GPU 0.
+1. If yes, please stop them, or start PaddlePaddle on another GPU.
+2. If no, please try one of the following suggestions:
+   1) Decrease the batch size of your model.
+   2) FLAGS_fraction_of_gpu_memory_to_use is 0.92 now, please set it to a higher value but less than 1.0.
+      The command is `export FLAGS_fraction_of_gpu_memory_to_use=xxx`.
+
+ at (/paddle/paddle/fluid/memory/detail/system_allocator.cc:151)
+*** Check failure stack trace: ***
+    @     0x7fa53608cb4d  google::LogMessage::Fail()
+    @     0x7fa5360905fc  google::LogMessage::SendToLog()
+    @     0x7fa53608c673  google::LogMessage::Flush()
+    @     0x7fa536091b0e  google::LogMessageFatal::~LogMessageFatal()
+    @     0x7fa5386131c8  paddle::framework::details::ExceptionHolder::Catch()
+    @     0x7fa5386ad53b  paddle::framework::details::FastThreadedSSAGraphExecutor::RunOpSync()
+    @     0x7fa5386a8547  paddle::framework::details::FastThreadedSSAGraphExecutor::RunTracedOps()
+    @     0x7fa5386abcd0  paddle::framework::details::FastThreadedSSAGraphExecutor::Run()
+    @     0x7fa538607190  paddle::framework::details::ScopeBufferedSSAGraphExecutor::Run()
+    @     0x7fa536136378  paddle::framework::ParallelExecutor::Run()
+    @     0x7fa535f10b88  _ZZN8pybind1112cpp_function10initializeIZN6paddle6pybindL22pybind11_init_core_avxERNS_6moduleEEUlRNS2_9framework16ParallelExecutorERKSt6vectorISsSaISsEEE189_S9_INS6_9LoDTensorESaISF_EEIS8_SD_EINS_4nameENS_9is_methodENS_7siblingEEEEvOT_PFT0_DpT1_EDpRKT2_ENUlRNS_6detail13function_callEE1_4_FUNESY_
+    @     0x7fa535f5a086  pybind11::cpp_function::dispatcher()
+    @           0x4c5cd6  PyEval_EvalFrameEx
+    @           0x4ba506  PyEval_EvalCodeEx
+    @           0x4c2418  PyEval_EvalFrameEx
+    @           0x4ba506  PyEval_EvalCodeEx
+    @           0x4c2418  PyEval_EvalFrameEx
+    @           0x4ba506  PyEval_EvalCodeEx
+    @           0x4c1e32  PyEval_EvalFrameEx
+    @           0x4ba506  PyEval_EvalCodeEx
+    @           0x4c1e32  PyEval_EvalFrameEx
+    @           0x4ba506  PyEval_EvalCodeEx
+    @           0x4c2418  PyEval_EvalFrameEx
+    @           0x4ba506  PyEval_EvalCodeEx
+    @           0x4ea9ef  (unknown)
+    @           0x4e56a2  PyRun_FileExFlags
+    @           0x4e3f56  PyRun_SimpleFileExFlags
+    @           0x493abe  Py_Main
+    @     0x7fa5a6116830  __libc_start_main
+    @           0x493489  _start
+    @              (nil)  (unknown)
+-----------  Configuration Arguments -----------
+attention_probs_dropout_prob: -1.0
+batch_size: 1
+beam_size: 5
+checkpoints: ./checkpoints
+continuous_position: True
+decr_every_n_nan_or_inf: 2
+decr_ratio: 0.8
+dev_set: ./datasets/squad_qg//dev.tsv
+do_decode: True
+do_lower_case: True
+do_pred: False
+do_test: True
+do_train: True
+do_val: True
+epoch: 10
+ernie_config_path: ernie_gen_base/ernie_config.json
+eval_mertrics: Bleu_4,METEOR,ROUGE_L
+eval_script: sh ./eval/tasks/squad_qg/eval.sh
+hidden_dropout_prob: 0.1
+in_tokens: False
+incr_every_n_steps: 100
+incr_ratio: 2.0
+init_checkpoint: None
+init_loss_scaling: 128.0
+init_pretraining_params: ernie_gen_base/params
+is_distributed: True
+label_smooth: 0.1
+learning_rate: 5e-05
+length_penalty: 1.0
+lr_scheduler: linear_warmup_decay
+max_dec_len: 48
+max_seq_len: 512
+max_src_len: 512
+max_tgt_len: 96
+noise_prob: 0.7
+num_iteration_per_drop_scope: 1
+pred_batch_size: 0
+pred_set: ./datasets/squad_qg//
+random_noise: True
+random_seed: 98874
+role_type_size: 0
+save_and_valid_by_epoch: True
+save_steps: 10000
+skip_steps: 10
+src_do_lower_case: True
+src_tokenizer: FullTokenizer
+src_vocab_path: None
+stream_job: None
+task_type: normal
+test_set: ./datasets/squad_qg//test.tsv
+tgt_type_id: 3
+tokenized_input: True
+tokenizer: FullTokenizer
+train_set: ./datasets/squad_qg//train.tsv
+turn_type_size: 0
+use_cuda: True
+use_dynamic_loss_scaling: False
+use_fast_executor: True
+use_fp16: False
+use_multi_gpu_test: True
+validation_steps: 1000
+verbose: True
+vocab_path: ernie_gen_base/vocab.txt
+warmup_proportion: 0.1
+weight_decay: 0.01
+weight_sharing: True
+------------------------------------------------
+attention_probs_dropout_prob: 0.1
+hidden_act: gelu
+hidden_dropout_prob: 0.1
+hidden_size: 768
+initializer_range: 0.02
+intermediate_size: 3072
+max_position_embeddings: 1024
+num_attention_heads: 12
+num_hidden_layers: 12
+type_vocab_size: 4
+vocab_size: 30522
+------------------------------------------------
+Device count: 1, gpu_id: 0
+Num train examples: 75722
+Max train steps: 757220
+Num warmup steps: 75722
+Theoretical memory usage in training: 12224.507 - 12806.626 MB
+args.is_distributed: True
+worker_endpoints:['172.17.0.2:6170'] trainers_num:1 current_endpoint:172.17.0.2:6170               trainer_id:0
+W0421 07:16:54.799188 21618 device_context.cc:236] Please NOTE: device: 0, CUDA Capability: 75, Driver API Version: 11.2, Runtime API Version: 10.0
+W0421 07:16:54.823912 21618 device_context.cc:244] device: 0, cuDNN Version: 7.6.
+69909c51c9cc:21618:21618 [0] NCCL INFO NET/Socket : Using [0]eth0:172.17.0.2<0>
+69909c51c9cc:21618:21618 [0] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so).
+
+69909c51c9cc:21618:21618 [0] misc/ibvwrap.cc:63 NCCL WARN Failed to open libibverbs.so[.1]
+I0421 07:16:56.339157 21618 rpc_client.h:107] init rpc client with trainer_id 0
+Load pretraining parameters from ernie_gen_base/params.
+I0421 07:16:57.233916 21618 parallel_executor.cc:421] The number of CUDAPlace, which is used in ParallelExecutor, is 1. And the Program will be copied 1 copies
+I0421 07:16:57.409499 21618 build_strategy.cc:363] SeqOnlyAllReduceOps:0, num_trainers:1
+I0421 07:16:57.682555 21618 parallel_executor.cc:285] Inplace strategy is enabled, when build_strategy.enable_inplace = True
+I0421 07:16:57.763832 21618 parallel_executor.cc:368] Garbage collection strategy is enabled, when FLAGS_eager_delete_tensor_gb = 1
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 10/75722, step: 10, loss: 8.187092, ppl: 3594.254395, speed: 5.367436 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 20/75722, step: 20, loss: 7.399627, ppl: 1635.374634, speed: 8.785246 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 30/75722, step: 30, loss: 7.001162, ppl: 1097.908203, speed: 8.461139 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 40/75722, step: 40, loss: 7.918718, ppl: 2748.245117, speed: 8.129651 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 50/75722, step: 50, loss: 7.280196, ppl: 1451.271973, speed: 8.613745 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 60/75722, step: 60, loss: 7.665787, ppl: 2134.071045, speed: 8.971441 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 70/75722, step: 70, loss: 5.695640, ppl: 297.567047, speed: 8.672981 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 80/75722, step: 80, loss: 7.455530, ppl: 1729.400635, speed: 7.671477 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 90/75722, step: 90, loss: 8.136131, ppl: 3415.677979, speed: 7.664907 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 100/75722, step: 100, loss: 7.378057, ppl: 1600.477051, speed: 7.689716 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 110/75722, step: 110, loss: 6.764344, ppl: 866.397461, speed: 8.305993 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 120/75722, step: 120, loss: 7.803916, ppl: 2450.177002, speed: 8.002824 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 130/75722, step: 130, loss: 7.753478, ppl: 2329.659912, speed: 7.687815 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 140/75722, step: 140, loss: 8.411257, ppl: 4497.409180, speed: 7.715306 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 150/75722, step: 150, loss: 8.266241, ppl: 3890.298096, speed: 7.532702 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 160/75722, step: 160, loss: 7.456421, ppl: 1730.941772, speed: 7.791894 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 170/75722, step: 170, loss: 6.865775, ppl: 958.888367, speed: 7.353985 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 180/75722, step: 180, loss: 8.777097, ppl: 6484.024902, speed: 7.636660 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 190/75722, step: 190, loss: 8.191024, ppl: 3608.414795, speed: 7.959787 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 200/75722, step: 200, loss: 9.222627, ppl: 10123.621094, speed: 7.828480 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 210/75722, step: 210, loss: 6.727996, ppl: 835.471191, speed: 7.780521 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 220/75722, step: 220, loss: 7.109619, ppl: 1223.681396, speed: 7.442403 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 230/75722, step: 230, loss: 6.732114, ppl: 838.919128, speed: 7.984758 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 240/75722, step: 240, loss: 7.281800, ppl: 1453.602539, speed: 8.073468 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 250/75722, step: 250, loss: 8.190434, ppl: 3606.285156, speed: 7.869004 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 260/75722, step: 260, loss: 7.572570, ppl: 1944.130005, speed: 7.949872 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 270/75722, step: 270, loss: 5.586680, ppl: 266.848206, speed: 7.862209 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 280/75722, step: 280, loss: 6.942625, ppl: 1035.484863, speed: 8.285945 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 290/75722, step: 290, loss: 5.883819, ppl: 359.178192, speed: 8.121115 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 300/75722, step: 300, loss: 8.526145, ppl: 5044.959961, speed: 8.280799 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 310/75722, step: 310, loss: 6.866154, ppl: 959.252380, speed: 7.934600 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 320/75722, step: 320, loss: 6.208617, ppl: 497.013519, speed: 8.585791 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 330/75722, step: 330, loss: 7.489363, ppl: 1788.912598, speed: 8.656344 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 340/75722, step: 340, loss: 6.494286, ppl: 661.351868, speed: 8.658901 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 350/75722, step: 350, loss: 7.796213, ppl: 2431.377197, speed: 8.166259 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 360/75722, step: 360, loss: 5.070075, ppl: 159.186264, speed: 8.478759 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 370/75722, step: 370, loss: 7.255355, ppl: 1415.665283, speed: 7.659500 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 380/75722, step: 380, loss: 7.117233, ppl: 1233.034302, speed: 8.030639 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 390/75722, step: 390, loss: 6.390670, ppl: 596.255859, speed: 7.440465 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 400/75722, step: 400, loss: 6.269898, ppl: 528.423462, speed: 7.429564 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 410/75722, step: 410, loss: 6.547588, ppl: 697.559875, speed: 8.425700 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 420/75722, step: 420, loss: 5.859674, ppl: 350.609650, speed: 8.067241 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 430/75722, step: 430, loss: 7.746988, ppl: 2314.589844, speed: 7.984842 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 440/75722, step: 440, loss: 6.627287, ppl: 755.429810, speed: 8.005880 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 450/75722, step: 450, loss: 6.545720, ppl: 696.257874, speed: 7.988816 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 460/75722, step: 460, loss: 6.140817, ppl: 464.432922, speed: 8.264381 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 470/75722, step: 470, loss: 6.683348, ppl: 798.989441, speed: 7.940434 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 480/75722, step: 480, loss: 6.217369, ppl: 501.382385, speed: 7.599032 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 490/75722, step: 490, loss: 6.732423, ppl: 839.178406, speed: 7.601222 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 500/75722, step: 500, loss: 7.273399, ppl: 1441.442139, speed: 7.695030 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 510/75722, step: 510, loss: 4.900199, ppl: 134.316559, speed: 8.247192 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 520/75722, step: 520, loss: 8.053221, ppl: 3143.904297, speed: 7.740741 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 530/75722, step: 530, loss: 6.401631, ppl: 602.827393, speed: 7.708858 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 540/75722, step: 540, loss: 6.502091, ppl: 666.534180, speed: 7.639909 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 550/75722, step: 550, loss: 6.473553, ppl: 647.781311, speed: 7.327424 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 560/75722, step: 560, loss: 5.940910, ppl: 380.280762, speed: 6.799974 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 570/75722, step: 570, loss: 6.810720, ppl: 907.523987, speed: 8.172205 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 580/75722, step: 580, loss: 5.476832, ppl: 239.088058, speed: 7.735040 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 590/75722, step: 590, loss: 5.929797, ppl: 376.078033, speed: 7.522484 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 600/75722, step: 600, loss: 6.266277, ppl: 526.513672, speed: 7.592651 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 610/75722, step: 610, loss: 6.613612, ppl: 745.169861, speed: 8.029368 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 620/75722, step: 620, loss: 5.315855, ppl: 203.538376, speed: 8.339581 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 630/75722, step: 630, loss: 7.685205, ppl: 2175.914795, speed: 7.937358 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 640/75722, step: 640, loss: 5.226850, ppl: 186.205246, speed: 7.782343 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 650/75722, step: 650, loss: 6.042694, ppl: 421.025604, speed: 7.917362 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 660/75722, step: 660, loss: 6.589756, ppl: 727.602966, speed: 7.566437 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 670/75722, step: 670, loss: 6.306272, ppl: 547.997925, speed: 8.342524 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 680/75722, step: 680, loss: 6.473113, ppl: 647.495972, speed: 8.257461 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 690/75722, step: 690, loss: 6.672623, ppl: 790.466003, speed: 7.930906 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 700/75722, step: 700, loss: 7.573085, ppl: 1945.131470, speed: 7.924885 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 710/75722, step: 710, loss: 5.444118, ppl: 231.393219, speed: 8.389234 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 720/75722, step: 720, loss: 6.917774, ppl: 1010.068787, speed: 7.819647 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 730/75722, step: 730, loss: 6.681145, ppl: 797.231567, speed: 7.804104 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 740/75722, step: 740, loss: 6.121356, ppl: 455.482117, speed: 8.356459 steps/s
+train pyreader queue size: 50, learning rate: 0.000000
+epoch: 0, progress: 750/75722, step: 750, loss: 5.372991, ppl: 215.506393, speed: 8.277440 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 760/75722, step: 760, loss: 5.200275, ppl: 181.322174, speed: 8.084310 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 770/75722, step: 770, loss: 5.545917, ppl: 256.189392, speed: 7.700399 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 780/75722, step: 780, loss: 5.529950, ppl: 252.131332, speed: 7.611073 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 790/75722, step: 790, loss: 6.170186, ppl: 478.274841, speed: 7.507440 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 800/75722, step: 800, loss: 6.416275, ppl: 611.719910, speed: 7.845001 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 810/75722, step: 810, loss: 6.274176, ppl: 530.688965, speed: 7.607507 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 820/75722, step: 820, loss: 4.994170, ppl: 147.550461, speed: 7.917193 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 830/75722, step: 830, loss: 5.854656, ppl: 348.854950, speed: 7.363857 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 840/75722, step: 840, loss: 6.293738, ppl: 541.172424, speed: 7.958635 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 850/75722, step: 850, loss: 6.313490, ppl: 551.967896, speed: 8.174595 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 860/75722, step: 860, loss: 5.354663, ppl: 211.592743, speed: 7.396527 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 870/75722, step: 870, loss: 6.114974, ppl: 452.584503, speed: 7.804640 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 880/75722, step: 880, loss: 5.662727, ppl: 287.932861, speed: 7.286282 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 890/75722, step: 890, loss: 5.074704, ppl: 159.924805, speed: 8.170455 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 900/75722, step: 900, loss: 4.746149, ppl: 115.140030, speed: 8.131793 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 910/75722, step: 910, loss: 5.992239, ppl: 400.310089, speed: 7.479818 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 920/75722, step: 920, loss: 6.647382, ppl: 770.764038, speed: 8.457019 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 930/75722, step: 930, loss: 6.176394, ppl: 481.253632, speed: 7.831975 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 940/75722, step: 940, loss: 6.345885, ppl: 570.141602, speed: 7.887096 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 950/75722, step: 950, loss: 5.835828, ppl: 342.348175, speed: 7.389541 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 960/75722, step: 960, loss: 5.605657, ppl: 271.960571, speed: 7.365050 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 970/75722, step: 970, loss: 5.638750, ppl: 281.111145, speed: 7.886049 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 980/75722, step: 980, loss: 8.007316, ppl: 3002.845459, speed: 8.070368 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 990/75722, step: 990, loss: 5.894020, ppl: 362.860901, speed: 8.267832 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1000/75722, step: 1000, loss: 6.049943, ppl: 424.088837, speed: 8.392185 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1010/75722, step: 1010, loss: 5.378675, ppl: 216.734909, speed: 7.820162 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1020/75722, step: 1020, loss: 5.543188, ppl: 255.491104, speed: 7.880059 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1030/75722, step: 1030, loss: 5.854767, ppl: 348.893555, speed: 8.050817 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1040/75722, step: 1040, loss: 4.928397, ppl: 138.157822, speed: 7.773391 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1050/75722, step: 1050, loss: 4.362046, ppl: 78.417397, speed: 7.533041 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1060/75722, step: 1060, loss: 6.081954, ppl: 437.883789, speed: 7.413009 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1070/75722, step: 1070, loss: 5.237632, ppl: 188.223816, speed: 7.864838 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1080/75722, step: 1080, loss: 5.340510, ppl: 208.619156, speed: 7.918665 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1090/75722, step: 1090, loss: 7.062540, ppl: 1167.406738, speed: 7.547353 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1100/75722, step: 1100, loss: 5.504628, ppl: 245.826920, speed: 8.628476 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1110/75722, step: 1110, loss: 5.814395, ppl: 335.088593, speed: 7.406316 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1120/75722, step: 1120, loss: 4.795524, ppl: 120.967766, speed: 8.066408 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1130/75722, step: 1130, loss: 6.742502, ppl: 847.678772, speed: 7.993740 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1140/75722, step: 1140, loss: 5.793142, ppl: 328.042053, speed: 7.605419 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1150/75722, step: 1150, loss: 5.751410, ppl: 314.634125, speed: 7.578622 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1160/75722, step: 1160, loss: 4.186591, ppl: 65.798080, speed: 7.833375 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1170/75722, step: 1170, loss: 5.710059, ppl: 301.888794, speed: 7.271151 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1180/75722, step: 1180, loss: 4.948884, ppl: 141.017502, speed: 7.870415 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1190/75722, step: 1190, loss: 4.986487, ppl: 146.421127, speed: 7.951414 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1200/75722, step: 1200, loss: 5.533616, ppl: 253.057327, speed: 7.716991 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1210/75722, step: 1210, loss: 5.312992, ppl: 202.956589, speed: 7.697530 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1220/75722, step: 1220, loss: 5.613244, ppl: 274.031769, speed: 7.926958 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1230/75722, step: 1230, loss: 5.105134, ppl: 164.866089, speed: 8.107729 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1240/75722, step: 1240, loss: 5.477945, ppl: 239.354401, speed: 8.470843 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1250/75722, step: 1250, loss: 5.189870, ppl: 179.445206, speed: 8.067483 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1260/75722, step: 1260, loss: 6.405978, ppl: 605.453735, speed: 7.456233 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1270/75722, step: 1270, loss: 5.111146, ppl: 165.860321, speed: 8.531061 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1280/75722, step: 1280, loss: 5.139370, ppl: 170.608322, speed: 8.380017 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1290/75722, step: 1290, loss: 4.466689, ppl: 87.067932, speed: 8.550135 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1300/75722, step: 1300, loss: 4.611413, ppl: 100.626282, speed: 8.033038 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1310/75722, step: 1310, loss: 5.942548, ppl: 380.904358, speed: 8.070250 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1320/75722, step: 1320, loss: 4.364453, ppl: 78.606415, speed: 8.225011 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1330/75722, step: 1330, loss: 5.830092, ppl: 340.389984, speed: 8.420948 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1340/75722, step: 1340, loss: 6.505299, ppl: 668.675659, speed: 8.518380 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1350/75722, step: 1350, loss: 4.608869, ppl: 100.370529, speed: 8.348994 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1360/75722, step: 1360, loss: 5.911991, ppl: 369.441010, speed: 8.103175 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1370/75722, step: 1370, loss: 5.474851, ppl: 238.614944, speed: 8.232004 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1380/75722, step: 1380, loss: 5.386129, ppl: 218.356567, speed: 7.755780 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1390/75722, step: 1390, loss: 5.122993, ppl: 167.836960, speed: 7.296665 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1400/75722, step: 1400, loss: 6.342656, ppl: 568.303528, speed: 7.817973 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1410/75722, step: 1410, loss: 5.816028, ppl: 335.636139, speed: 7.896262 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1420/75722, step: 1420, loss: 6.854550, ppl: 948.185669, speed: 7.454932 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1430/75722, step: 1430, loss: 6.321259, ppl: 556.272888, speed: 8.101712 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1440/75722, step: 1440, loss: 5.394076, ppl: 220.098755, speed: 8.009157 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1450/75722, step: 1450, loss: 4.195633, ppl: 66.395775, speed: 7.866911 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1460/75722, step: 1460, loss: 6.415380, ppl: 611.173279, speed: 7.819140 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1470/75722, step: 1470, loss: 4.225872, ppl: 68.434158, speed: 8.000410 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1480/75722, step: 1480, loss: 4.095288, ppl: 60.056648, speed: 7.941808 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1490/75722, step: 1490, loss: 5.399839, ppl: 221.370865, speed: 7.584290 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1500/75722, step: 1500, loss: 4.398554, ppl: 81.333160, speed: 7.887544 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1510/75722, step: 1510, loss: 5.774471, ppl: 321.974152, speed: 7.649459 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1520/75722, step: 1520, loss: 5.549799, ppl: 257.185974, speed: 8.254980 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1530/75722, step: 1530, loss: 6.488558, ppl: 657.574341, speed: 7.576699 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1540/75722, step: 1540, loss: 4.562019, ppl: 95.776642, speed: 7.738297 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1550/75722, step: 1550, loss: 6.359775, ppl: 578.116333, speed: 7.561831 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1560/75722, step: 1560, loss: 6.092109, ppl: 442.353455, speed: 7.645565 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1570/75722, step: 1570, loss: 5.160989, ppl: 174.336838, speed: 7.699693 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1580/75722, step: 1580, loss: 6.269722, ppl: 528.330750, speed: 8.252344 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1590/75722, step: 1590, loss: 4.903941, ppl: 134.820084, speed: 7.392874 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1600/75722, step: 1600, loss: 5.389788, ppl: 219.156845, speed: 8.253120 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1610/75722, step: 1610, loss: 5.748053, ppl: 313.579559, speed: 7.437316 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1620/75722, step: 1620, loss: 5.152542, ppl: 172.870300, speed: 7.566254 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1630/75722, step: 1630, loss: 5.275951, ppl: 195.576462, speed: 7.789696 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1640/75722, step: 1640, loss: 5.238774, ppl: 188.438904, speed: 8.156267 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1650/75722, step: 1650, loss: 4.928410, ppl: 138.159607, speed: 7.439049 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1660/75722, step: 1660, loss: 6.420700, ppl: 614.433105, speed: 7.289252 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1670/75722, step: 1670, loss: 6.584987, ppl: 724.141724, speed: 8.154897 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1680/75722, step: 1680, loss: 5.243307, ppl: 189.294998, speed: 8.434412 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1690/75722, step: 1690, loss: 5.450923, ppl: 232.973099, speed: 7.458918 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1700/75722, step: 1700, loss: 5.779395, ppl: 323.563416, speed: 7.115518 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1710/75722, step: 1710, loss: 6.541851, ppl: 693.568909, speed: 7.804548 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1720/75722, step: 1720, loss: 6.155365, ppl: 471.238800, speed: 7.766007 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1730/75722, step: 1730, loss: 5.588264, ppl: 267.271362, speed: 7.856781 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1740/75722, step: 1740, loss: 6.770278, ppl: 871.553711, speed: 8.180815 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1750/75722, step: 1750, loss: 6.658892, ppl: 779.686707, speed: 7.970165 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1760/75722, step: 1760, loss: 5.120269, ppl: 167.380432, speed: 8.120186 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1770/75722, step: 1770, loss: 6.036946, ppl: 418.612762, speed: 7.595351 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1780/75722, step: 1780, loss: 5.880169, ppl: 357.869843, speed: 7.590392 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1790/75722, step: 1790, loss: 5.393188, ppl: 219.903320, speed: 7.389912 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1800/75722, step: 1800, loss: 4.718979, ppl: 112.053772, speed: 6.979181 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1810/75722, step: 1810, loss: 6.175200, ppl: 480.679138, speed: 8.099711 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1820/75722, step: 1820, loss: 6.044185, ppl: 421.654053, speed: 8.211475 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1830/75722, step: 1830, loss: 4.137513, ppl: 62.646805, speed: 7.664920 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1840/75722, step: 1840, loss: 3.508068, ppl: 33.383694, speed: 7.737932 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1850/75722, step: 1850, loss: 4.644272, ppl: 103.987671, speed: 7.588727 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1860/75722, step: 1860, loss: 5.623524, ppl: 276.863251, speed: 8.118398 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1870/75722, step: 1870, loss: 6.769271, ppl: 870.676819, speed: 7.479492 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1880/75722, step: 1880, loss: 4.931249, ppl: 138.552475, speed: 8.153169 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1890/75722, step: 1890, loss: 5.700352, ppl: 298.972687, speed: 7.937107 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1900/75722, step: 1900, loss: 4.281523, ppl: 72.350525, speed: 7.489986 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1910/75722, step: 1910, loss: 5.320562, ppl: 204.498749, speed: 7.697762 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1920/75722, step: 1920, loss: 4.745305, ppl: 115.042892, speed: 7.671558 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1930/75722, step: 1930, loss: 5.185132, ppl: 178.596939, speed: 8.184639 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1940/75722, step: 1940, loss: 4.605209, ppl: 100.003868, speed: 8.306737 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1950/75722, step: 1950, loss: 4.292346, ppl: 73.137817, speed: 7.892803 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1960/75722, step: 1960, loss: 4.426666, ppl: 83.652039, speed: 8.099041 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1970/75722, step: 1970, loss: 5.717250, ppl: 304.067535, speed: 7.710374 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1980/75722, step: 1980, loss: 6.562559, ppl: 708.081116, speed: 7.691508 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 1990/75722, step: 1990, loss: 4.503233, ppl: 90.308624, speed: 7.878309 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 2000/75722, step: 2000, loss: 3.749687, ppl: 42.507782, speed: 7.666905 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 2010/75722, step: 2010, loss: 7.147933, ppl: 1271.474487, speed: 8.244493 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 2020/75722, step: 2020, loss: 6.879153, ppl: 971.803162, speed: 7.956019 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 2030/75722, step: 2030, loss: 5.728122, ppl: 307.391510, speed: 7.550794 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 2040/75722, step: 2040, loss: 3.734169, ppl: 41.853252, speed: 8.293524 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 2050/75722, step: 2050, loss: 5.445311, ppl: 231.669220, speed: 7.595281 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 2060/75722, step: 2060, loss: 4.940457, ppl: 139.834122, speed: 8.110998 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 2070/75722, step: 2070, loss: 5.328427, ppl: 206.113571, speed: 7.845217 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 2080/75722, step: 2080, loss: 4.227754, ppl: 68.563072, speed: 8.192061 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 2090/75722, step: 2090, loss: 6.441412, ppl: 627.291870, speed: 7.575889 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 2100/75722, step: 2100, loss: 6.339420, ppl: 566.467834, speed: 7.506296 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 2110/75722, step: 2110, loss: 5.281697, ppl: 196.703354, speed: 7.763703 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 2120/75722, step: 2120, loss: 4.493596, ppl: 89.442467, speed: 8.456473 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 2130/75722, step: 2130, loss: 5.366726, ppl: 214.160538, speed: 7.665590 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 2140/75722, step: 2140, loss: 5.520017, ppl: 249.639206, speed: 8.034723 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 2150/75722, step: 2150, loss: 3.519648, ppl: 33.772541, speed: 7.605361 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 2160/75722, step: 2160, loss: 5.253197, ppl: 191.176514, speed: 8.204334 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 2170/75722, step: 2170, loss: 3.965685, ppl: 52.756390, speed: 8.420500 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 2180/75722, step: 2180, loss: 5.331566, ppl: 206.761581, speed: 7.728602 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 2190/75722, step: 2190, loss: 4.692562, ppl: 109.132431, speed: 7.555849 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 2200/75722, step: 2200, loss: 5.196533, ppl: 180.644806, speed: 8.156327 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 2210/75722, step: 2210, loss: 5.631461, ppl: 279.069458, speed: 7.726255 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 2220/75722, step: 2220, loss: 5.469275, ppl: 237.287979, speed: 7.700452 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 2230/75722, step: 2230, loss: 5.185901, ppl: 178.734360, speed: 7.835443 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 2240/75722, step: 2240, loss: 5.004474, ppl: 149.078598, speed: 7.819946 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 2250/75722, step: 2250, loss: 5.414874, ppl: 224.724243, speed: 8.477911 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 2260/75722, step: 2260, loss: 4.679020, ppl: 107.664551, speed: 7.516192 steps/s
+train pyreader queue size: 50, learning rate: 0.000001
+epoch: 0, progress: 2270/75722, step: 2270, loss: 4.771781, ppl: 118.129494, speed: 7.643852 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2280/75722, step: 2280, loss: 4.935330, ppl: 139.119095, speed: 7.439916 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2290/75722, step: 2290, loss: 5.827472, ppl: 339.499237, speed: 7.758830 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2300/75722, step: 2300, loss: 3.289466, ppl: 26.828531, speed: 7.807322 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2310/75722, step: 2310, loss: 6.455595, ppl: 636.251892, speed: 8.130656 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2320/75722, step: 2320, loss: 5.405012, ppl: 222.518814, speed: 7.968648 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2330/75722, step: 2330, loss: 7.002173, ppl: 1099.018677, speed: 7.921450 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2340/75722, step: 2340, loss: 5.031713, ppl: 153.195206, speed: 8.079327 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2350/75722, step: 2350, loss: 4.712201, ppl: 111.296867, speed: 7.840451 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2360/75722, step: 2360, loss: 4.474265, ppl: 87.730103, speed: 8.288506 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2370/75722, step: 2370, loss: 5.257424, ppl: 191.986267, speed: 8.448164 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2380/75722, step: 2380, loss: 5.436742, ppl: 229.692688, speed: 7.975392 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2390/75722, step: 2390, loss: 6.608101, ppl: 741.074646, speed: 7.414048 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2400/75722, step: 2400, loss: 3.941568, ppl: 51.499283, speed: 7.915983 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2410/75722, step: 2410, loss: 5.592535, ppl: 268.415314, speed: 7.914967 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2420/75722, step: 2420, loss: 5.074621, ppl: 159.911530, speed: 7.817680 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2430/75722, step: 2430, loss: 6.528895, ppl: 684.641174, speed: 7.850749 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2440/75722, step: 2440, loss: 4.848432, ppl: 127.540260, speed: 7.662688 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2450/75722, step: 2450, loss: 5.700545, ppl: 299.030426, speed: 7.576114 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2460/75722, step: 2460, loss: 3.789287, ppl: 44.224861, speed: 7.406716 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2470/75722, step: 2470, loss: 5.832182, ppl: 341.102142, speed: 7.607618 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2480/75722, step: 2480, loss: 5.594473, ppl: 268.935852, speed: 7.931032 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2490/75722, step: 2490, loss: 6.707905, ppl: 818.853577, speed: 7.805500 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2500/75722, step: 2500, loss: 5.870136, ppl: 354.297241, speed: 7.519182 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2510/75722, step: 2510, loss: 4.697976, ppl: 109.724876, speed: 7.741796 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2520/75722, step: 2520, loss: 6.128337, ppl: 458.672943, speed: 7.932944 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2530/75722, step: 2530, loss: 4.834828, ppl: 125.816925, speed: 8.073885 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2540/75722, step: 2540, loss: 4.118916, ppl: 61.492519, speed: 7.812458 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2550/75722, step: 2550, loss: 5.454234, ppl: 233.745667, speed: 7.821091 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2560/75722, step: 2560, loss: 6.477437, ppl: 650.301758, speed: 7.595644 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2570/75722, step: 2570, loss: 5.775817, ppl: 322.407867, speed: 8.133070 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2580/75722, step: 2580, loss: 4.382599, ppl: 80.045792, speed: 8.036816 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2590/75722, step: 2590, loss: 4.773017, ppl: 118.275536, speed: 7.662894 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2600/75722, step: 2600, loss: 6.056712, ppl: 426.969330, speed: 8.192074 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2610/75722, step: 2610, loss: 5.457343, ppl: 234.473618, speed: 7.955095 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2620/75722, step: 2620, loss: 4.201723, ppl: 66.801338, speed: 7.442559 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2630/75722, step: 2630, loss: 3.960360, ppl: 52.476231, speed: 8.276535 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2640/75722, step: 2640, loss: 5.036061, ppl: 153.862732, speed: 7.991658 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2650/75722, step: 2650, loss: 3.042871, ppl: 20.965338, speed: 8.161760 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2660/75722, step: 2660, loss: 5.769195, ppl: 320.279663, speed: 8.294928 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2670/75722, step: 2670, loss: 5.008824, ppl: 149.728607, speed: 7.421436 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2680/75722, step: 2680, loss: 4.198612, ppl: 66.593849, speed: 8.183982 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2690/75722, step: 2690, loss: 5.140005, ppl: 170.716553, speed: 7.939735 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2700/75722, step: 2700, loss: 5.671546, ppl: 290.483124, speed: 7.392934 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2710/75722, step: 2710, loss: 3.879740, ppl: 48.411613, speed: 7.940529 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2720/75722, step: 2720, loss: 6.303858, ppl: 546.676819, speed: 7.768553 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2730/75722, step: 2730, loss: 5.506954, ppl: 246.399490, speed: 7.773837 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2740/75722, step: 2740, loss: 6.103249, ppl: 447.308533, speed: 7.383620 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2750/75722, step: 2750, loss: 3.802693, ppl: 44.821712, speed: 8.346271 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2760/75722, step: 2760, loss: 4.310038, ppl: 74.443291, speed: 7.542734 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2770/75722, step: 2770, loss: 5.691406, ppl: 296.310028, speed: 8.348326 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2780/75722, step: 2780, loss: 5.844151, ppl: 345.209167, speed: 7.746126 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2790/75722, step: 2790, loss: 3.534030, ppl: 34.261757, speed: 7.644242 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2800/75722, step: 2800, loss: 6.392990, ppl: 597.640625, speed: 7.758391 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2810/75722, step: 2810, loss: 6.357300, ppl: 576.687073, speed: 7.289862 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2820/75722, step: 2820, loss: 6.307721, ppl: 548.792908, speed: 7.725062 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2830/75722, step: 2830, loss: 6.703749, ppl: 815.457397, speed: 7.194105 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2840/75722, step: 2840, loss: 3.969385, ppl: 52.951950, speed: 7.867851 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2850/75722, step: 2850, loss: 5.092517, ppl: 162.799179, speed: 7.464508 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2860/75722, step: 2860, loss: 5.535465, ppl: 253.525711, speed: 7.372843 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2870/75722, step: 2870, loss: 4.509381, ppl: 90.865585, speed: 8.109958 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2880/75722, step: 2880, loss: 5.458052, ppl: 234.639832, speed: 7.033377 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2890/75722, step: 2890, loss: 4.666793, ppl: 106.356094, speed: 7.641153 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2900/75722, step: 2900, loss: 3.956772, ppl: 52.288284, speed: 7.818779 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2910/75722, step: 2910, loss: 5.053909, ppl: 156.633530, speed: 8.019200 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2920/75722, step: 2920, loss: 5.328828, ppl: 206.196243, speed: 7.782223 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2930/75722, step: 2930, loss: 5.897627, ppl: 364.172394, speed: 7.726584 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2940/75722, step: 2940, loss: 5.639188, ppl: 281.234222, speed: 7.644595 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2950/75722, step: 2950, loss: 5.935672, ppl: 378.294220, speed: 7.941513 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2960/75722, step: 2960, loss: 5.154645, ppl: 173.234299, speed: 7.720702 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2970/75722, step: 2970, loss: 5.345823, ppl: 209.730484, speed: 7.877478 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2980/75722, step: 2980, loss: 5.165559, ppl: 175.135376, speed: 7.747278 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 2990/75722, step: 2990, loss: 5.327693, ppl: 205.962265, speed: 7.314310 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3000/75722, step: 3000, loss: 4.366653, ppl: 78.779510, speed: 7.468360 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3010/75722, step: 3010, loss: 4.723213, ppl: 112.529251, speed: 8.330106 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3020/75722, step: 3020, loss: 4.844278, ppl: 127.011589, speed: 8.013874 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3030/75722, step: 3030, loss: 4.912638, ppl: 135.997726, speed: 7.273024 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3040/75722, step: 3040, loss: 4.778141, ppl: 118.883202, speed: 7.243464 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3050/75722, step: 3050, loss: 4.512829, ppl: 91.179428, speed: 7.542406 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3060/75722, step: 3060, loss: 4.866437, ppl: 129.857407, speed: 7.746240 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3070/75722, step: 3070, loss: 5.529665, ppl: 252.059570, speed: 7.737609 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3080/75722, step: 3080, loss: 6.479728, ppl: 651.793762, speed: 7.851808 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3090/75722, step: 3090, loss: 6.546481, ppl: 696.787964, speed: 7.399421 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3100/75722, step: 3100, loss: 5.407707, ppl: 223.119431, speed: 7.702831 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3110/75722, step: 3110, loss: 5.114133, ppl: 166.356552, speed: 7.515852 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3120/75722, step: 3120, loss: 5.002773, ppl: 148.825256, speed: 7.796863 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3130/75722, step: 3130, loss: 4.081430, ppl: 59.230133, speed: 7.175583 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3140/75722, step: 3140, loss: 5.091547, ppl: 162.641205, speed: 7.913441 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3150/75722, step: 3150, loss: 4.855319, ppl: 128.421661, speed: 7.361793 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3160/75722, step: 3160, loss: 4.502042, ppl: 90.201118, speed: 8.108733 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3170/75722, step: 3170, loss: 4.107696, ppl: 60.806461, speed: 7.944024 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3180/75722, step: 3180, loss: 5.790670, ppl: 327.232178, speed: 8.018719 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3190/75722, step: 3190, loss: 5.148846, ppl: 172.232651, speed: 7.575190 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3200/75722, step: 3200, loss: 5.920961, ppl: 372.769745, speed: 7.802741 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3210/75722, step: 3210, loss: 5.492529, ppl: 242.870636, speed: 7.199704 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3220/75722, step: 3220, loss: 5.454914, ppl: 233.904663, speed: 7.845427 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3230/75722, step: 3230, loss: 5.201973, ppl: 181.630325, speed: 7.488729 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3240/75722, step: 3240, loss: 4.421293, ppl: 83.203819, speed: 7.413117 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3250/75722, step: 3250, loss: 4.186323, ppl: 65.780449, speed: 8.271203 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3260/75722, step: 3260, loss: 4.266834, ppl: 71.295540, speed: 7.829923 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3270/75722, step: 3270, loss: 4.390340, ppl: 80.667831, speed: 8.081381 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3280/75722, step: 3280, loss: 5.912710, ppl: 369.706604, speed: 7.588792 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3290/75722, step: 3290, loss: 6.987650, ppl: 1083.173462, speed: 8.164718 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3300/75722, step: 3300, loss: 5.083362, ppl: 161.315430, speed: 8.300800 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3310/75722, step: 3310, loss: 5.092767, ppl: 162.839783, speed: 8.015312 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3320/75722, step: 3320, loss: 5.398280, ppl: 221.025955, speed: 7.695066 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3330/75722, step: 3330, loss: 4.188601, ppl: 65.930458, speed: 7.732881 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3340/75722, step: 3340, loss: 5.200537, ppl: 181.369644, speed: 7.497353 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3350/75722, step: 3350, loss: 5.754176, ppl: 315.505371, speed: 7.425547 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3360/75722, step: 3360, loss: 4.746249, ppl: 115.151505, speed: 8.176595 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3370/75722, step: 3370, loss: 5.682620, ppl: 293.717987, speed: 7.737813 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3380/75722, step: 3380, loss: 5.117087, ppl: 166.848694, speed: 7.350617 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3390/75722, step: 3390, loss: 4.374637, ppl: 79.410980, speed: 7.755654 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3400/75722, step: 3400, loss: 4.211319, ppl: 67.445442, speed: 7.707591 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3410/75722, step: 3410, loss: 4.758478, ppl: 116.568336, speed: 7.939419 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3420/75722, step: 3420, loss: 5.379607, ppl: 216.936935, speed: 7.753199 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3430/75722, step: 3430, loss: 5.089064, ppl: 162.237885, speed: 7.771795 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3440/75722, step: 3440, loss: 5.945700, ppl: 382.106628, speed: 5.076492 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3450/75722, step: 3450, loss: 6.379969, ppl: 589.909180, speed: 8.343470 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3460/75722, step: 3460, loss: 4.703966, ppl: 110.384102, speed: 7.430199 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3470/75722, step: 3470, loss: 6.438800, ppl: 625.655762, speed: 7.338615 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3480/75722, step: 3480, loss: 3.957182, ppl: 52.309704, speed: 8.332563 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3490/75722, step: 3490, loss: 4.525203, ppl: 92.314644, speed: 7.509424 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3500/75722, step: 3500, loss: 3.786081, ppl: 44.083290, speed: 7.821905 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3510/75722, step: 3510, loss: 4.908074, ppl: 135.378418, speed: 7.419817 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3520/75722, step: 3520, loss: 7.009370, ppl: 1106.957275, speed: 7.608197 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3530/75722, step: 3530, loss: 4.778391, ppl: 118.912849, speed: 7.845217 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3540/75722, step: 3540, loss: 4.572966, ppl: 96.830894, speed: 7.492757 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3550/75722, step: 3550, loss: 4.809800, ppl: 122.707092, speed: 6.920971 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3560/75722, step: 3560, loss: 5.757721, ppl: 316.625885, speed: 7.627078 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3570/75722, step: 3570, loss: 4.544246, ppl: 94.089432, speed: 8.700343 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3580/75722, step: 3580, loss: 3.541380, ppl: 34.514523, speed: 8.136451 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3590/75722, step: 3590, loss: 5.048294, ppl: 155.756454, speed: 7.391355 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3600/75722, step: 3600, loss: 4.894741, ppl: 133.585342, speed: 7.491327 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3610/75722, step: 3610, loss: 4.061498, ppl: 58.061203, speed: 7.547233 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3620/75722, step: 3620, loss: 4.305917, ppl: 74.137154, speed: 7.477799 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3630/75722, step: 3630, loss: 5.815766, ppl: 335.548431, speed: 7.852517 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3640/75722, step: 3640, loss: 5.167097, ppl: 175.404831, speed: 7.727993 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3650/75722, step: 3650, loss: 4.904612, ppl: 134.910492, speed: 7.505237 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3660/75722, step: 3660, loss: 5.696784, ppl: 297.907928, speed: 8.326020 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3670/75722, step: 3670, loss: 5.595028, ppl: 269.085175, speed: 8.661195 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3680/75722, step: 3680, loss: 5.154792, ppl: 173.259811, speed: 8.508018 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3690/75722, step: 3690, loss: 4.695204, ppl: 109.421158, speed: 8.296842 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3700/75722, step: 3700, loss: 3.311575, ppl: 27.428282, speed: 8.138796 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3710/75722, step: 3710, loss: 5.762519, ppl: 318.148865, speed: 7.583463 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3720/75722, step: 3720, loss: 3.504187, ppl: 33.254383, speed: 7.630565 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3730/75722, step: 3730, loss: 5.544173, ppl: 255.742935, speed: 7.607774 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3740/75722, step: 3740, loss: 3.962453, ppl: 52.586170, speed: 8.127979 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3750/75722, step: 3750, loss: 6.521680, ppl: 679.719299, speed: 7.667078 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3760/75722, step: 3760, loss: 3.615609, ppl: 37.173992, speed: 8.191290 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3770/75722, step: 3770, loss: 4.720447, ppl: 112.218407, speed: 8.113433 steps/s
+train pyreader queue size: 50, learning rate: 0.000002
+epoch: 0, progress: 3780/75722, step: 3780, loss: 4.863502, ppl: 129.476837, speed: 7.338824 steps/s
+train pyreader queue size: 50, learning rate: 0.000003
+epoch: 0, progress: 3790/75722, step: 3790, loss: 4.327957, ppl: 75.789268, speed: 7.996776 steps/s
+train pyreader queue size: 50, learning rate: 0.000003
+epoch: 0, progress: 3800/75722, step: 3800, loss: 4.215323, ppl: 67.716034, speed: 7.799710 steps/s
+train pyreader queue size: 50, learning rate: 0.000003
+epoch: 0, progress: 3810/75722, step: 3810, loss: 5.855667, ppl: 349.207794, speed: 7.415587 steps/s
+train pyreader queue size: 50, learning rate: 0.000003
+epoch: 0, progress: 3820/75722, step: 3820, loss: 5.139670, ppl: 170.659424, speed: 7.357816 steps/s
+train pyreader queue size: 50, learning rate: 0.000003
+epoch: 0, progress: 3830/75722, step: 3830, loss: 3.694361, ppl: 40.219883, speed: 7.572947 steps/s
+train pyreader queue size: 50, learning rate: 0.000003
+epoch: 0, progress: 3840/75722, step: 3840, loss: 3.636586, ppl: 37.962002, speed: 7.952039 steps/s
+train pyreader queue size: 50, learning rate: 0.000003
+epoch: 0, progress: 3850/75722, step: 3850, loss: 3.071445, ppl: 21.573042, speed: 7.129551 steps/s
+train pyreader queue size: 50, learning rate: 0.000003
+epoch: 0, progress: 3860/75722, step: 3860, loss: 6.594414, ppl: 731.000549, speed: 7.644326 steps/s
+train pyreader queue size: 50, learning rate: 0.000003
+epoch: 0, progress: 3870/75722, step: 3870, loss: 4.464486, ppl: 86.876335, speed: 7.860203 steps/s
+train pyreader queue size: 50, learning rate: 0.000003
+epoch: 0, progress: 3880/75722, step: 3880, loss: 4.002043, ppl: 54.709797, speed: 7.734557 steps/s
+train pyreader queue size: 50, learning rate: 0.000003
+epoch: 0, progress: 3890/75722, step: 3890, loss: 3.963954, ppl: 52.665150, speed: 8.520021 steps/s
+train pyreader queue size: 50, learning rate: 0.000003
+epoch: 0, progress: 3900/75722, step: 3900, loss: 4.343380, ppl: 76.967247, speed: 8.811582 steps/s
+train pyreader queue size: 50, learning rate: 0.000003
+epoch: 0, progress: 3910/75722, step: 3910, loss: 4.352871, ppl: 77.701256, speed: 7.717121 steps/s
+train pyreader queue size: 50, learning rate: 0.000003
+epoch: 0, progress: 3920/75722, step: 3920, loss: 5.467711, ppl: 236.917374, speed: 7.458329 steps/s
+train pyreader queue size: 50, learning rate: 0.000003
+epoch: 0, progress: 3930/75722, step: 3930, loss: 4.421612, ppl: 83.230324, speed: 8.238888 steps/s
+train pyreader queue size: 50, learning rate: 0.000003
+epoch: 0, progress: 3940/75722, step: 3940, loss: 4.762367, ppl: 117.022621, speed: 7.929366 steps/s
+train pyreader queue size: 50, learning rate: 0.000003
+epoch: 0, progress: 3950/75722, step: 3950, loss: 3.507761, ppl: 33.373451, speed: 7.993758 steps/s
+train pyreader queue size: 50, learning rate: 0.000003
+epoch: 0, progress: 3960/75722, step: 3960, loss: 5.400743, ppl: 221.570984, speed: 7.282997 steps/s
+train pyreader queue size: 50, learning rate: 0.000003
+epoch: 0, progress: 3970/75722, step: 3970, loss: 6.844452, ppl: 938.658691, speed: 7.887990 steps/s
+train pyreader queue size: 50, learning rate: 0.000003
+epoch: 0, progress: 3980/75722, step: 3980, loss: 5.908952, ppl: 368.320038, speed: 7.694971 steps/s
+train pyreader queue size: 50, learning rate: 0.000003
+epoch: 0, progress: 3990/75722, step: 3990, loss: 5.898951, ppl: 364.654755, speed: 7.668294 steps/s
+train pyreader queue size: 50, learning rate: 0.000003
+epoch: 0, progress: 4000/75722, step: 4000, loss: 5.351663, ppl: 210.958847, speed: 7.699131 steps/s
+train pyreader queue size: 50, learning rate: 0.000003
+epoch: 0, progress: 4010/75722, step: 4010, loss: 4.264152, ppl: 71.104599, speed: 7.540802 steps/s
+train pyreader queue size: 50, learning rate: 0.000003
+epoch: 0, progress: 4020/75722, step: 4020, loss: 6.096691, ppl: 444.384918, speed: 7.607536 steps/s
+train pyreader queue size: 50, learning rate: 0.000003
+epoch: 0, progress: 4030/75722, step: 4030, loss: 4.667623, ppl: 106.444374, speed: 7.423398 steps/s
+train pyreader queue size: 50, learning rate: 0.000003
+epoch: 0, progress: 4040/75722, step: 4040, loss: 6.108624, ppl: 449.719696, speed: 7.704741 steps/s
+train pyreader queue size: 50, learning rate: 0.000003
+epoch: 0, progress: 4050/75722, step: 4050, loss: 4.973370, ppl: 144.513016, speed: 7.352610 steps/s
+train pyreader queue size: 50, learning rate: 0.000003
+epoch: 0, progress: 4060/75722, step: 4060, loss: 4.499780, ppl: 89.997345, speed: 7.404724 steps/s
+train pyreader queue size: 50, learning rate: 0.000003
+epoch: 0, progress: 4070/75722, step: 4070, loss: 4.745489, ppl: 115.064072, speed: 7.812938 steps/s
+train pyreader queue size: 50, learning rate: 0.000003
+epoch: 0, progress: 4080/75722, step: 4080, loss: 4.691290, ppl: 108.993729, speed: 7.740172 steps/s
+train pyreader queue size: 50, learning rate: 0.000003
+epoch: 0, progress: 4090/75722, step: 4090, loss: 3.305596, ppl: 27.264795, speed: 8.109964 steps/s
+train pyreader queue size: 50, learning rate: 0.000003
+epoch: 0, progress: 4100/75722, step: 4100, loss: 5.971090, ppl: 391.932770, speed: 8.155144 steps/s
+train pyreader queue size: 50, learning rate: 0.000003
+epoch: 0, progress: 4110/75722, step: 4110, loss: 5.179177, ppl: 177.536606, speed: 7.828162 steps/s
+train pyreader queue size: 50, learning rate: 0.000003
+epoch: 0, progress: 4120/75722, step: 4120, loss: 5.988782, ppl: 398.928589, speed: 7.804251 steps/s
+train pyreader queue size: 50, learning rate: 0.000003
+epoch: 0, progress: 4130/75722, step: 4130, loss: 5.523517, ppl: 250.514465, speed: 7.421072 steps/s
+train pyreader queue size: 50, learning rate: 0.000003
+epoch: 0, progress: 4140/75722, step: 4140, loss: 5.829767, ppl: 340.279449, speed: 6.849611 steps/s
+train pyreader queue size: 50, learning rate: 0.000003
+epoch: 0, progress: 4150/75722, step: 4150, loss: 4.156066, ppl: 63.819988, speed: 8.784436 steps/s
+train pyreader queue size: 50, learning rate: 0.000003
+epoch: 0, progress: 4160/75722, step: 4160, loss: 4.697675, ppl: 109.691818, speed: 7.654360 steps/s
+train pyreader queue size: 50, learning rate: 0.000003
+epoch: 0, progress: 4170/75722, step: 4170, loss: 4.863298, ppl: 129.450485, speed: 7.600119 steps/s
+train pyreader queue size: 50, learning rate: 0.000003
+epoch: 0, progress: 4180/75722, step: 4180, loss: 4.253251, ppl: 70.333664, speed: 7.812122 steps/s
+train pyreader queue size: 50, learning rate: 0.000003
+epoch: 0, progress: 4190/75722, step: 4190, loss: 4.982833, ppl: 145.887146, speed: 8.107465 steps/s
